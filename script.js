@@ -1,8 +1,8 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var saveBtnEl = $('<button>')
-var textArea = $('<textarea>')
+var timeBlock = $()
+var saveBtnEl = $('.saveBtn')
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
@@ -12,7 +12,13 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   $(saveBtnEl).on('click', function() {
+    console.log(this);
+    var textContent = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    console.log(time);
+    console.log(textContent);
     
+    localStorage.setItem(textContent, time);
   })
   //
   // TODO: Add code to apply the past, present, or future class to each time
