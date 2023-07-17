@@ -4,6 +4,7 @@
 $(document).ready(function() {
   var saveBtnEl = $('.saveBtn')
   var currentHour = dayjs().format('H')
+  var currentDate = $('#currentDate')
 
   $(saveBtnEl).on('click', function() {
     var textContent = $(this).siblings(".description").val();
@@ -31,10 +32,12 @@ $(document).ready(function() {
     });
 
     // TODO: Add code to display the current date in the header of the page.
+    var currentDate = dayjs().format('[The current date is: ]DD/MM/YYYY')
+      $("#currentDay").text(currentDate);
 
     
-
     blockColour();
+    updateDate();
   });
 
 
