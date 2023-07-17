@@ -10,7 +10,7 @@ $(document).ready(function() {
     var time = $(this).parent().attr("id");      
     console.log(time);
     console.log(textContent)
-    localStorage.setItem(textContent, time);
+    localStorage.setItem(time, textContent);
   })
   
   function blockColour() {
@@ -31,6 +31,8 @@ $(document).ready(function() {
     });
 
     // TODO: Add code to display the current date in the header of the page.
+
+    
 
     blockColour();
   });
